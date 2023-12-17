@@ -1,0 +1,80 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/templates/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <title>PCOS Predictor</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">PCOS Predictor</h1>
+      <form id="pcosForm">
+        <div class="first-section">
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required />
+
+          <label for="bmi">BMI:</label>
+          <input type="number" id="bmi" name="bmi" required />
+
+          <label for="menstrualCycle">Menstrual Cycle Regularity:</label>
+          <select id="menstrualCycle" name="menstrualCycle" required>
+            <option value="regular">Regular</option>
+            <option value="irregular">Irregular</option>
+          </select>
+
+          <label for="hirsutismScore">Hirsutism Score:</label>
+          <input
+            type="number"
+            id="hirsutismScore"
+            name="hirsutismScore"
+            required
+          />
+        </div>
+        <div>
+          <label for="acnePresence">Acne Presence:</label>
+          <select id="acnePresence" name="acnePresence" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <label for="familyHistory">Family History of PCOS:</label>
+          <select id="familyHistory" name="familyHistory" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <label for="insulinResistance">Insulin Resistance Indicator:</label>
+          <select id="insulinResistance" name="insulinResistance" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <label for="ovulatoryDysfunction">Ovulatory Dysfunction:</label>
+          <select
+            id="ovulatoryDysfunction"
+            name="ovulatoryDysfunction"
+            required
+          >
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <!-- Add similar input fields for other parameters -->
+
+        <button class="btn" type="button" onclick="predict()">Predict</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+    <!-- Add this button before the closing </body> tag in templates/index.html -->
+    <!-- <button id="darkModeToggle">Toggle Dark Mode</button> -->
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
